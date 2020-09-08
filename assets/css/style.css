@@ -12,7 +12,7 @@ li {
   list-style: none;
 }
 
-.primary-btn, #about .about-container .about-intro .about-intro-item .more-btn, #service .service-container .serv-blocks .appointment-form form .form-item div .submit-btn {
+.primary-btn, #about .about-container .about-intro .about-intro-item .more-btn, #service .service-container .serv-blocks .appointment-form form .form-item div .submit-btn, #price .price-container .cards .card-body div .price-center-btn {
   color: #fff;
   padding: 13px 40px;
   font-size: 18px;
@@ -24,7 +24,7 @@ li {
   outline: none;
 }
 
-.primary-btn:hover, #about .about-container .about-intro .about-intro-item .more-btn:hover, #service .service-container .serv-blocks .appointment-form form .form-item div .submit-btn:hover {
+.primary-btn:hover, #about .about-container .about-intro .about-intro-item .more-btn:hover, #service .service-container .serv-blocks .appointment-form form .form-item div .submit-btn:hover, #price .price-container .cards .card-body div .price-center-btn:hover {
   background: -webkit-gradient(linear, left top, right top, from(#157fda), to(#39b49b));
   background: linear-gradient(to right, #157fda 0%, #39b49b 100%);
 }
@@ -135,7 +135,7 @@ header .header-bottom .header-container {
 
 header .header-bottom .header-container #nav-menu {
   float: left;
-  margin: 10px;
+  margin: 18px;
 }
 
 header .header-bottom .header-container #nav-menu .menubtn {
@@ -159,13 +159,12 @@ header .header-bottom .header-container #nav-menu .menu li {
 }
 
 header .header-bottom .header-container #nav-menu .menu li a {
-  padding: 8px;
-  text-decoration: none;
-  display: inline-block;
   color: white;
-  font-weight: 600;
-  font-size: 14px;
-  outline: none;
+  font-size: 17px;
+  padding: 20px 22px;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 500;
 }
 
 header .header-bottom .header-container #nav-menu .menu li:hover a {
@@ -712,7 +711,7 @@ header .header-bottom .header-container .search-bar .search-input .input-search-
 }
 
 #doctors {
-  padding: 48rem 0;
+  padding-top: 48rem;
 }
 
 #doctors .doctors-container {
@@ -819,5 +818,112 @@ header .header-bottom .header-container .search-bar .search-input .input-search-
   padding: 6px 12px;
   background: -webkit-gradient(linear, left top, right top, from(#39b49a), to(#1d86df));
   background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);
+}
+
+#price {
+  padding: 100px 0;
+  background-image: url("../images/price-bg.png");
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
+#price .price-container {
+  max-width: 100%;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#price .price-container .cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: wrap;
+      -ms-flex: wrap;
+          flex: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+#price .price-container .cards .card-body {
+  text-align: center;
+  width: 33%;
+  margin: 60px 10px 0;
+  background: #fff;
+  -webkit-box-shadow: 0px 10px 25px -20px #000;
+          box-shadow: 0px 10px 25px -20px #000;
+}
+
+#price .price-container .cards .card-body h2 {
+  padding: 20px 0 15px 0;
+  font-size: 31px;
+  font-weight: 300;
+}
+
+#price .price-container .cards .card-body h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #aaaaaa;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+#price .price-container .cards .card-body p {
+  margin: 15px 30px 0 30px;
+  padding: 0 10px 15px 10px;
+  border-bottom: 1px solid #ececec;
+  font-weight: 300;
+  line-height: 30px;
+  color: #c2c2c2;
+  font-size: 16px;
+}
+
+#price .price-container .cards .card-body .title {
+  margin: 5px;
+  padding: 0px 0 15px 0;
+  color: #fff;
+  background: -webkit-gradient(linear, left top, right top, from(#39b49a), to(#1d86df));
+  background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);
+}
+
+#price .price-container .cards .card-body .title h3 {
+  color: #fff;
+}
+
+#price .price-container .cards .card-body ul {
+  margin: 15px 30px 0 30px;
+  padding: 0 10px 30px 50px;
+  border-bottom: 1px solid #ececec;
+  text-align: left;
+  line-height: 30px;
+  font-size: 16px;
+  color: #c2c2c2;
+}
+
+#price .price-container .cards .card-body ul li strong {
+  color: #222;
+  font-weight: 400;
+  margin-right: 6px;
+  margin-left: 16px;
+}
+
+#price .price-container .cards .card-body div {
+  margin-top: 25px;
+  padding-bottom: 20px;
+}
+
+#price .price-container .cards .card-body div .price-btn {
+  padding: 10px 24px;
+  font-size: 15px;
+  border: 1px solid #ececec;
+  color: #1f1f1f;
+  background-color: transparent;
 }
 /*# sourceMappingURL=style.css.map */

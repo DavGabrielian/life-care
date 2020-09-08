@@ -50,6 +50,7 @@ li {
   outline: none;
 }
 
+// extend
 .primary-btn {
   color: #fff;
   padding: 13px 40px;
@@ -63,6 +64,10 @@ li {
     background: linear-gradient(to right, $primary-color 0%, $hover-color 100%);
   }
 }
+
+// .price-icon {
+
+// }
 
 header {
   position: fixed;
@@ -147,7 +152,7 @@ header {
 
       #nav-menu {
         float: left;
-        margin: 10px;
+        margin: 18px;
 
         .menubtn {
           display: none;
@@ -168,13 +173,12 @@ header {
             float: left;
 
             a {
-              padding: 8px;
-              text-decoration: none;
-              display: inline-block;
               color: white;
-              font-weight: 600;
-              font-size: 14px;
-              outline: none;
+              font-size: 17px;
+              padding: 20px 22px;
+              text-transform: none;
+              letter-spacing: 0;
+              font-weight: 500;
             }
 
             &:hover a {
@@ -573,7 +577,7 @@ header {
 }
 
 #doctors {
-  padding: 48rem 0;
+  padding-top: 48rem;
   .doctors-container {
     @include desktopMedia();
     .doctors-heading {
@@ -645,6 +649,92 @@ header {
             color: #ffffff;
             padding: 6px 12px;
             background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);
+          }
+        }
+      }
+    }
+  }
+}
+
+#price {
+  padding: 100px 0;
+  background-image: url("../images/price-bg.png");
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  .price-container {
+    @include desktopMedia();
+    .cards {
+      @include flexbox(row);
+      padding-top: 1rem;
+      padding-bottom: 2rem;
+      .card-body {
+        text-align: center;
+        width: 33%;
+        margin: 60px 10px 0;
+        background: #fff;
+        box-shadow: 0px 10px 25px -20px #000;
+
+        h2 {
+          padding: 20px 0 15px 0;
+          font-size: 31px;
+          font-weight: 300;
+        }
+        h3 {
+          font-size: 15px;
+          font-weight: 600;
+          color: #aaaaaa;
+          margin-top: 10px;
+          text-transform: uppercase;
+        }
+        p {
+          margin: 15px 30px 0 30px;
+          padding: 0 10px 15px 10px;
+          border-bottom: 1px solid #ececec;
+          font-weight: 300;
+          line-height: 30px;
+          color: #c2c2c2;
+          font-size: 16px;
+        }
+        .title {
+          margin: 5px;
+          padding: 0px 0 15px 0;
+          color: #fff;
+          background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);
+          h3 {
+            color: #fff;
+          }
+        }
+        ul {
+          margin: 15px 30px 0 30px;
+          padding: 0 10px 30px 50px;
+          border-bottom: 1px solid #ececec;
+          text-align: left;
+          line-height: 30px;
+          font-size: 16px;
+          color: #c2c2c2;
+          li {
+            strong {
+              color: #222;
+              font-weight: 400;
+              margin-right: 6px;
+              margin-left: 16px;
+            }
+          }
+        }
+        div {
+          margin-top: 25px;
+          padding-bottom: 20px;
+          .price-btn {
+            padding: 10px 24px;
+            font-size: 15px;
+            border: 1px solid #ececec;
+            color: #1f1f1f;
+            background-color: transparent;
+          }
+          .price-center-btn {
+            @extend .primary-btn;
           }
         }
       }
