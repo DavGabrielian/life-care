@@ -12,6 +12,23 @@ li {
   list-style: none;
 }
 
+.primary-btn, #about .about-container .about-intro .about-intro-item .more-btn, #service .service-container .serv-blocks .appointment-form form .form-item div .submit-btn {
+  color: #fff;
+  padding: 13px 40px;
+  font-size: 18px;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  background: -webkit-gradient(linear, left top, right top, from(#39b49b), to(#157fda));
+  background: linear-gradient(to right, #39b49b 0%, #157fda 100%);
+  border-radius: 100px;
+  outline: none;
+}
+
+.primary-btn:hover, #about .about-container .about-intro .about-intro-item .more-btn:hover, #service .service-container .serv-blocks .appointment-form form .form-item div .submit-btn:hover {
+  background: -webkit-gradient(linear, left top, right top, from(#157fda), to(#39b49b));
+  background: linear-gradient(to right, #157fda 0%, #39b49b 100%);
+}
+
 header {
   position: fixed;
   top: 0;
@@ -27,8 +44,8 @@ header .header-top {
 
 header .header-top .header-container {
   max-width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
   margin-right: auto;
   margin-left: auto;
   padding-right: 30px;
@@ -110,8 +127,8 @@ header .header-bottom {
 
 header .header-bottom .header-container {
   max-width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -212,7 +229,7 @@ header .header-bottom .header-container .search-bar .search-input .input-search-
 }
 
 #intro {
-  background-image: url("/assets/images/slider-bg.png");
+  background-image: url("../images/slider-bg.png");
   position: relative;
   min-height: 650px;
   width: 100%;
@@ -223,8 +240,8 @@ header .header-bottom .header-container .search-bar .search-input .input-search-
 
 #intro .intro-container {
   max-width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -280,8 +297,8 @@ header .header-bottom .header-container .search-bar .search-input .input-search-
 
 #info .info-container {
   max-width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -396,8 +413,8 @@ header .header-bottom .header-container .search-bar .search-input .input-search-
 
 #about .about-container {
   max-width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
   margin-right: auto;
   margin-left: auto;
   display: -webkit-box;
@@ -480,22 +497,6 @@ header .header-bottom .header-container .search-bar .search-input .input-search-
   margin-bottom: 15px;
 }
 
-#about .about-container .about-intro .about-intro-item .primary-btn {
-  color: #fff;
-  padding: 13px 40px;
-  font-size: 18px;
-  cursor: pointer;
-  border: 2px solid #ffffff;
-  background: -webkit-gradient(linear, left top, right top, from(#39b49a), to(#1d86df));
-  background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);
-  border-radius: 100px;
-}
-
-#about .about-container .about-intro .about-intro-item .primary-btn:hover {
-  background: -webkit-gradient(linear, left top, right top, from(#1d86df), to(#39b49a));
-  background: linear-gradient(to right, #1d86df 0%, #39b49a 100%);
-}
-
 #about .about-container .about-intro .about-intro-item img {
   display: block;
   max-width: 100%;
@@ -539,6 +540,189 @@ header .header-bottom .header-container .search-bar .search-input .input-search-
   text-align: center;
 }
 
+#service {
+  width: 100%;
+  background: url("../images/service-bg.png");
+  padding: 5rem 0;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  float: left;
+}
+
+#service .service-container {
+  max-width: 100%;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#service .service-container .serv-blocks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: wrap;
+      -ms-flex: wrap;
+          flex: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+#service .service-container .serv-blocks .serv-item-block {
+  width: 100%;
+  padding-bottom: 2rem;
+}
+
+#service .service-container .serv-blocks .serv-item-block .serv-item {
+  width: 30%;
+  text-align: center;
+  color: #fff;
+  padding-bottom: 2rem;
+  float: left;
+}
+
+#service .service-container .serv-blocks .serv-item-block .serv-item .icon-service {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#service .service-container .serv-blocks .serv-item-block .serv-item .icon-service img {
+  width: 60px;
+}
+
+#service .service-container .serv-blocks .serv-item-block .serv-item h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 5px 0 0;
+  width: 100%;
+}
+
+#service .service-container .serv-blocks .serv-item-block .serv-item p {
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 15px;
+  line-height: 23px;
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+#service .service-container .serv-blocks .appointment-form {
+  width: 40%;
+  background: #fff;
+  min-height: 425px;
+  -webkit-box-shadow: 0 0 50px -22px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 50px -22px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+}
+
+#service .service-container .serv-blocks .appointment-form h3 {
+  margin: 0;
+  background: -webkit-gradient(linear, left top, right top, from(#39b49b), to(#157fda));
+  background: linear-gradient(to right, #39b49b 0%, #157fda 100%);
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#service .service-container .serv-blocks .appointment-form form .form-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: wrap;
+      -ms-flex: wrap;
+          flex: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#service .service-container .serv-blocks .appointment-form form .form-item input {
+  border-radius: 0;
+  border: solid #ccc 1px;
+  padding: 1px 15px;
+  font-weight: 400;
+  font-size: 13px;
+  margin: 12px 0 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #333;
+  height: 44px;
+}
+
+#service .service-container .serv-blocks .appointment-form form .form-item div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: wrap;
+      -ms-flex: wrap;
+          flex: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#service .service-container .serv-blocks .appointment-form form .form-item div .submit-btn {
+  margin-top: 1rem;
+}
+
+#service .service-container .serv-blocks .appointment-form form .form-item select {
+  border-radius: 0;
+  border: solid #ccc 1px;
+  padding: 1px 15px;
+  font-weight: 400;
+  font-size: 13px;
+  margin: 12px 0 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #333;
+  height: 44px;
+  outline: none;
+  width: 100%;
+  background-color: #fff;
+}
+
+#service .service-container .serv-blocks .appointment-form form .form-item textarea {
+  border-radius: 0;
+  border: solid #ccc 1px;
+  padding: 1px 15px;
+  font-weight: 400;
+  font-size: 13px;
+  margin: 12px 0 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #333;
+  height: 44px;
+  outline: none;
+  height: 90px;
+}
+
+#doctors {
+  padding: 48rem 0;
+}
+
+#doctors .doctors-container {
+  max-width: 100%;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 #doctors .doctors-container .doctors-heading {
   text-align: center;
   float: left;
@@ -568,5 +752,72 @@ header .header-bottom .header-container .search-bar .search-input .input-search-
   content: "";
   display: block;
   margin: 10px auto 0;
+}
+
+#doctors .doctors-container .doctors-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: wrap;
+      -ms-flex: wrap;
+          flex: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  width: 100%;
+}
+
+#doctors .doctors-container .doctors-block .doctors-item {
+  text-align: center;
+  max-width: 30%;
+  padding: 20px;
+}
+
+#doctors .doctors-container .doctors-block .doctors-item img {
+  border-radius: 6px;
+  max-width: 100%;
+}
+
+#doctors .doctors-container .doctors-block .doctors-item h3 {
+  background: -webkit-gradient(linear, left top, right top, from(#157fda), to(#39b49b));
+  background: linear-gradient(to right, #157fda 0%, #39b49b 100%);
+  color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 20px;
+  line-height: 1;
+  padding: 15px 20px;
+  margin: 0 70px;
+  position: relative;
+  top: -35px;
+}
+
+#doctors .doctors-container .doctors-block .doctors-item span {
+  font-size: 14px;
+  color: #157fda;
+}
+
+#doctors .doctors-container .doctors-block .doctors-item p {
+  font-size: 16px;
+  font-weight: 300;
+  color: #999;
+}
+
+#doctors .doctors-container .doctors-block .doctors-item .footer-social {
+  margin-top: 20px;
+}
+
+#doctors .doctors-container .doctors-block .doctors-item .footer-social a {
+  color: #ffffff;
+  padding: 6px 12px;
+  background: -webkit-gradient(linear, left top, right top, from(#39b49a), to(#1d86df));
+  background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);
 }
 /*# sourceMappingURL=style.css.map */
