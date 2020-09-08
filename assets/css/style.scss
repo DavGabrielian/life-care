@@ -21,6 +21,21 @@ li {
   margin-left: auto;
 }
 
+@mixin heading-h2 {
+  font-size: 35px;
+  text-transform: none;
+  font-weight: 400;
+  letter-spacing: -1px;
+  color: #333;
+  margin: 5px 0;
+  padding: 0;
+  position: relative;
+}
+@mixin flexbox($way) {
+  display: flex;
+  flex: wrap;
+  flex-direction: $way;
+}
 header {
   position: fixed;
   top: 0;
@@ -215,7 +230,7 @@ header {
         border-radius: 100%;
         width: 100px;
         height: 100px;
-        border: solid #39b49b 3px;
+        border: solid $hover-color 3px;
 
         img {
           width: 50px;
@@ -224,7 +239,6 @@ header {
       }
       h1 {
         margin-top: 2px;
-
         font-size: 45px;
         font-weight: 400;
       }
@@ -242,7 +256,7 @@ header {
 
       .info-item {
         min-height: 200px;
-        margin-top: -300px;
+        margin-top: -350px;
         width: 20%;
         z-index: 1;
         padding: 50px;
@@ -293,7 +307,7 @@ header {
         }
       }
       .second {
-        margin-bottom: -65px;
+        margin-bottom: -63px;
         &::before {
           content: "";
           display: block;
@@ -301,10 +315,10 @@ header {
           height: 0;
           background: transparent;
           position: absolute;
-          bottom: -225px;
           z-index: 0;
           border-bottom: solid transparent 65px;
           border-right: solid #a0cff7 70px;
+          bottom: -217px;
           left: 423px;
         }
         &::after {
@@ -317,8 +331,144 @@ header {
           z-index: 0;
           border-bottom: solid transparent 65px;
           border-left: solid #a0cff7 70px;
-          bottom: -225px;
+          bottom: -217px;
           right: 423px;
+        }
+      }
+    }
+  }
+}
+
+#about {
+  padding: 10rem 0;
+  .about-container {
+    @include desktopMedia();
+    @include flexbox(column);
+    .about-heading {
+      text-align: center;
+      float: left;
+      width: 100%;
+      margin: 0 0 50px 0;
+      .icon-logo {
+        img {
+          width: 60px;
+        }
+      }
+      h2 {
+        @include heading-h2;
+        &::after {
+          width: 50px;
+          height: 4px;
+          background: $hover-color;
+          content: "";
+          display: block;
+          margin: 10px auto 0;
+        }
+      }
+    }
+    .about-intro {
+      width: 100%;
+
+      .about-intro-item {
+        width: 50%;
+        float: left;
+        padding-bottom: 1rem;
+
+        h4 {
+          text-transform: uppercase;
+          padding: 0;
+          margin: 0 0 5px;
+          font-weight: 600;
+          letter-spacing: 0.5px;
+          font-size: 17px;
+          color: #0071d1;
+        }
+        h2 {
+          font-weight: bold;
+          font-size: 34px;
+          padding: 0 0 10px;
+        }
+        p {
+          width: 80%;
+          padding-top: 10px;
+          font-size: 16px;
+          font-style: normal;
+          color: #999;
+          padding-bottom: 0;
+          font-weight: 400;
+          margin-bottom: 15px;
+        }
+        .primary-btn {
+          color: #fff;
+          padding: 13px 40px;
+          font-size: 18px;
+          cursor: pointer;
+          border: 2px solid #ffffff;
+          background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);
+          border-radius: 100px;
+          &:hover {
+            background: linear-gradient(to right, #1d86df 0%, #39b49a 100%);
+          }
+        }
+        img {
+          display: block;
+          max-width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    .about-gallery {
+      @include flexbox(row);
+      padding-top: 7rem;
+      padding-bottom: 2rem;
+      width: 100%;
+      .about-gallery-item {
+        max-width: 25%;
+        padding-right: 10px;
+        padding-left: 10px;
+        div {
+          img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+          }
+        }
+        h3 {
+          font-size: 16px;
+          color: #ffffff;
+          padding: 12px 0 12px;
+          margin: 0;
+          background: #157fda;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+#doctors {
+  .doctors-container {
+    .doctors-heading {
+      text-align: center;
+      float: left;
+      width: 100%;
+      margin: 0 0 50px 0;
+      .icon-logo {
+        img {
+          width: 60px;
+        }
+      }
+      h2 {
+        @include heading-h2;
+
+        &::after {
+          width: 50px;
+          height: 4px;
+          background: $hover-color;
+          content: "";
+          display: block;
+          margin: 10px auto 0;
         }
       }
     }
