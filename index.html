@@ -24,6 +24,12 @@
           <a class="logo" href="/"
             ><img src="assets/images/logo.png" alt="logo-image"
           /></a>
+          <button onclick="openMenu()" id="open" class="menubtn">
+            <i class="fa fa-bars"></i>
+          </button>
+          <button onclick="closeMenu()" id='close' class="closebtn">
+            <i class="fa fa-bars"></i>
+          </button>
           <div class="header-info-block">
             <div class="header-info-item">
               <span class="header-icon"
@@ -51,13 +57,7 @@
       <div class="header-bottom">
         <div class="header-container">
           <nav id="nav-menu">
-            <button onclick="openMenu()" class="menubtn">
-              <i class="fa fa-bars"></i>
-            </button>
             <ul id="menu" class="menu">
-              <button onclick="closeMenu()" class="closebtn">
-                <i class="fa fa-times"></i>
-              </button>
               <li><a class="active" href="#intro">Home</a></li>
               <li><a href="#about">About</a></li>
               <li><a href="#service">Services</a></li>
@@ -657,5 +657,6 @@
         by David Gabrielian
       </p>
     </footer>
+    <script src="assets/app.js"></script>
   </body>
 </html>
