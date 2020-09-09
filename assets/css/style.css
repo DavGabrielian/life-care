@@ -48,8 +48,8 @@ header .header-top .header-container {
   padding-left: 20px;
   margin-right: auto;
   margin-left: auto;
-  padding-right: 30px;
-  padding-left: 30px;
+  padding-right: 50px;
+  padding-left: 50px;
 }
 
 header .header-top .header-container .logo {
@@ -182,6 +182,16 @@ header .header-bottom .header-container .search-bar {
 }
 
 header .header-bottom .header-container .search-bar .search-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: wrap;
+      -ms-flex: wrap;
+          flex: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   border: none;
   border-radius: 50px;
   background-color: #fff;
@@ -200,7 +210,7 @@ header .header-bottom .header-container .search-bar .search-input input {
   height: 40px;
   border: none;
   outline: none;
-  padding: 0 4px;
+  padding: 0 10px;
 }
 
 header .header-bottom .header-container .search-bar .search-input .input-search-btn {
@@ -219,10 +229,11 @@ header .header-bottom .header-container .search-bar .search-input .input-search-
   -webkit-box-shadow: none;
           box-shadow: none;
   color: #666666;
-  padding: 10px 12px;
+  padding: 0 10px;
 }
 
 header .header-bottom .header-container .search-bar .search-input .input-search-btn button .fa-search {
+  padding: 10px 0px;
   font-size: 18px;
   color: #333;
 }

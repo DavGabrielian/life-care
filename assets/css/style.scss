@@ -86,8 +86,8 @@ header {
 
     .header-container {
       @include desktopMedia();
-      padding-right: 30px;
-      padding-left: 30px;
+      padding-right: 50px;
+      padding-left: 50px;
       .logo {
         float: left;
         height: auto;
@@ -198,6 +198,7 @@ header {
         float: right;
         width: 250px;
         .search-input {
+          @include flexbox(row);
           border: none;
           border-radius: 50px;
           background-color: #fff;
@@ -215,7 +216,7 @@ header {
             height: 40px;
             border: none;
             outline: none;
-            padding: 0 4px;
+            padding: 0 10px;
           }
           .input-search-btn {
             flex-wrap: wrap;
@@ -227,8 +228,9 @@ header {
               background: none;
               box-shadow: none;
               color: #666666;
-              padding: 10px 12px;
+              padding: 0 10px;
               .fa-search {
+                padding: 10px 0px;
                 font-size: 18px;
                 color: #333;
               }
