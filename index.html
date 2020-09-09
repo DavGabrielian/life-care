@@ -526,7 +526,7 @@
 
     <section id="getintouch">
       <div class="getintouch-container">
-        <div class="heading">
+        <div class="getintouch-heading">
           <span class="icon-logo"
             ><img src="assets/images/icon-logo.png" alt="#"
           /></span>
@@ -534,13 +534,13 @@
         </div>
 
         <div class="contact-section">
-          <div class="form-contant">
+          <div class="form-content">
             <form>
               <div class="input-group">
                 <div class="input-item">
                   <input type="text" placeholder="Name" required="required" />
                 </div>
-                <div class="form-group in_email">
+                <div class="input-item">
                   <input
                     type="email"
                     placeholder="E-mail"
@@ -557,8 +557,7 @@
                     required="required"
                   />
                 </div>
-
-                <div class="form-group in_email">
+                <div class="input-item">
                   <input
                     type="text"
                     id="subject"
@@ -567,7 +566,7 @@
                   />
                 </div>
               </div>
-              <div class="input-item">
+              <div class="input-group">
                 <textarea
                   id="message"
                   rows="5"
@@ -575,12 +574,23 @@
                   required="required"
                 ></textarea>
               </div>
-              <div class="primary-btn">
-                <button type="submit">Learn More</button>
+              <div>
+                <button class="send-btn" type="submit">Learn More</button>
               </div>
             </form>
           </div>
-          <div id="googleMap" style="width: 100%; height: 450px"></div>
+          <div class="map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d195168.327635253!2d44.348483028336275!3d40.153305998477684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406aa2dab8fc8b5b%3A0x3d1479ae87da526a!2sYerevan!5e0!3m2!1sen!2s!4v1599638557500!5m2!1sen!2s"
+              width="100%"
+              height="100%"
+              frameborder="0"
+              style="border: 0"
+              allowfullscreen=""
+              aria-hidden="false"
+              tabindex="0"
+            ></iframe>
+          </div>
         </div>
       </div>
     </section>
@@ -594,36 +604,45 @@
           </p>
         </div>
         <div class="links-block">
+          <h4>CONTACT US</h4>
           <ul>
-            <h4>CONTACT US</h4>
             <li>
-              <i class="fa fa-map-marker"></i> PO Box 16122 Collins Street West
-              Victoria 8007 Australia
+              <span>
+                <i class="fa fa-map-marker"></i>
+              </span>
+              PO Box 16122 Collins Street West Victoria 8007 Australia
             </li>
-            <li><i class="fa fa-paper-plane"></i> info@gmail.com</li>
-            <li><i class="fa fa-phone"></i> (+1) 800 123 456</li>
+            <li>
+              <span>
+                <i class="fa fa-paper-plane"></i>
+              </span>
+              info@gmail.com
+            </li>
+
+            <li>
+              <span>
+                <i class="fa fa-phone"></i>
+              </span>
+              (+1) 800 123 456
+            </li>
           </ul>
         </div>
-        <div class="links-block">
-          <div class="subcriber-info">
-            <h3>SUBSCRIBE</h3>
-            <p>
-              Get healthy news, tip and solutions to your problems from our
-              experts.
-            </p>
-            <form id="mc-form" class="mc-form">
-              <div class="newsletter-form">
-                <input
-                  type="email"
-                  placeholder="Email address"
-                  class="subcriber-input"
-                />
-                <button class="primary-btn">
-                  <i class="fa fa-paper-plane"></i>
-                </button>
-              </div>
-            </form>
-          </div>
+        <div class="footer-form">
+          <h4>SUBSCRIBE</h4>
+          <p>
+            Get healthy news, tip and solutions to your problems from our
+            experts.
+          </p>
+          <form>
+            <input
+              type="email"
+              placeholder="Email address"
+              class="subcriber-input"
+            />
+            <button class="footer-btn">
+              <i class="fa fa-paper-plane"></i>
+            </button>
+          </form>
         </div>
       </div>
     </section>

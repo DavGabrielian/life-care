@@ -60,7 +60,7 @@ li {
   padding: 13px 40px;
   font-size: 18px;
   cursor: pointer;
-  border: 2px solid #ffffff;
+  border: none;
   background: linear-gradient(to right, $hover-color 0%, $primary-color 100%);
   border-radius: 100px;
   outline: none;
@@ -848,89 +848,207 @@ header {
   }
 }
 
+#getintouch {
+  padding: 50px 0;
+  background-image: url("../images/bg-testimonial.png");
+  background-position: bottom;
+  background-attachment: fixed;
 
+  .getintouch-heading {
+    text-align: center;
+    width: 100%;
+    margin: 0 0 50px 0;
+    .icon-logo {
+      img {
+        width: 60px;
+      }
+    }
+    h2 {
+      @include heading-h2;
 
+      &::after {
+        width: 50px;
+        height: 40px;
+        background: $hover-color;
+        content: "";
+        display: block;
+        margin: 10px auto 0;
+      }
+    }
+  }
 
-// #links {
-//   font-size: 14px;
-//   margin-right: auto;
-//   margin-left: auto;
+  .contact-section {
+    @include flexbox(row);
+    width: 100%;
+    .form-content {
+      position: relative;
+      width: 30%;
+      height: 30%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 1;
+      padding: 50px;
+      form {
+        @include flexbox(column);
+        justify-content: center;
+        .input-group {
+          width: 100%;
+          .input-item {
+            width: 50%;
+            float: left;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            input {
+              width: 100%;
+              background: transparent;
+              padding: 0;
+              border: none;
+              border-bottom: solid #fff 2px;
+              font-size: 15px;
+              font-weight: 300;
+              margin-bottom: 15px;
+              outline: none;
+            }
+          }
+        }
+        .input-group {
+          width: 100%;
 
-//   div {
-//     padding: 10px;
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: space-around;
+          textarea {
+            width: 95%;
+            background: transparent;
+            border: none;
+            border-bottom: solid #fff 2px;
+            font-size: 15px;
+            font-weight: 300;
+          }
+        }
 
-//     .life-care-block {
-//       max-width: 25%;
-//       @include footBlock();
-//       img {
-//         height: 40px;
-//       }
+        div {
+          @include flexbox(row);
+          justify-content: center;
+          .send-btn {
+            margin-top: 2rem;
+            @extend .primary-btn;
+          }
+        }
+      }
+    }
 
-//       p {
-//         font-size: 14px;
-//         line-height: 24px;
-//         margin-bottom: 0;
-//         color: #999;
-//       }
-//     }
+    .map {
+      width: 70%;
+      height: 100;
+    }
+  }
+}
 
-//     .links-block {
-//       flex: 0 0 20%;
-//       max-width: 50%;
-//       h4 {
-//         margin: 0 0 20px 0;
-//         font-size: 14px;
-//         font-weight: bold;
-//         text-transform: uppercase;
-//         position: relative;
-//         padding-bottom: 12px;
-//       }
-//     }
+#links {
+  font-size: 14px;
+  margin-right: auto;
+  margin-left: auto;
 
-//     ul {
+  div {
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
-//       padding: 0;
-//       margin: 0;
-//       width: 100%;
-//       li {
+    .life-care-block {
+      max-width: 30%;
+      @include footBlock();
+      img {
+        height: 40px;
+      }
 
-//         border-bottom: 1px solid #262c44;
-//         padding: 10px 0;
-//         .fa-angle-right {
-//           padding-right: 5px;
-//           color: $primary-color;
-//           font-size: 18px;
-//         }
-//       }
-//     }
+      p {
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 0;
+        color: #999;
+      }
+    }
 
-//     .footer-form {
-//       @include flexbox(row);
-//       width: 100%;
-//       height: 40px;
+    .links-block {
+      max-width: 30%;
+      h4 {
+        color: #222;
+        font-size: 17px;
+        font-weight: 900;
+        border-left: solid #157fda 5px;
+        padding: 0 0 0 15px;
+        margin-bottom: 20px;
+      }
 
-//       input {
-//         border: 0;
-//         padding: 6px 8px;
-//         width: 60%;
-//       }
+      ul {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        li {
+          margin-bottom: 15px;
+          color: #999;
+          font-size: 16px;
+          font-weight: 400;
+          span {
+            padding-right: 10px;
+            font-size: 20px;
+            width: 30px;
+            text-align: center;
+            color: #157fda;
+          }
+        }
+      }
+    }
 
-//       button {
-//         border: 0;
-//         width: 30%;
-//         padding: 6px 0;
-//         text-align: center;
-//         color: #fff;
-//         transition: 0.3s;
-//         cursor: pointer;
-//         outline: none;
-//       }
-//     }
-//   }
-// }
+    .footer-form {
+      max-width: 30%;
+      h4 {
+        color: #222;
+        font-size: 17px;
+        font-weight: 900;
+        border-left: solid #157fda 5px;
+        padding: 0 0 0 15px;
+        margin-bottom: 20px;
+      }
+
+      p {
+        padding-top: 30px;
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 0;
+        color: #999;
+      }
+      form {
+        @include flexbox(row);
+        padding-top: 10px;
+        input {
+          display: inline-block;
+          height: 50px;
+          width: 80%;
+          padding: 0px 20px;
+          background: #eee;
+          border-radius: 0;
+          border: none;
+          box-shadow: none;
+          outline: none;
+        }
+
+        button {
+          height: 50px;
+          width: 20%;
+          font-weight: bold;
+          color: #fff;
+          background: linear-gradient(to right, #1d86df 0%, #39b49a 100%);
+          border: none;
+          font-size: 24px;
+          position: relative;
+          display: inline-block;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
 
 footer {
   background: $primary-color;
