@@ -27,7 +27,7 @@
           <button onclick="openMenu()" id="open" class="menubtn">
             <i class="fa fa-bars"></i>
           </button>
-          <button onclick="closeMenu()" id='close' class="closebtn">
+          <button onclick="closeMenu()" id="close" class="closebtn">
             <i class="fa fa-bars"></i>
           </button>
           <div class="header-info-block">
@@ -567,12 +567,14 @@
                 </div>
               </div>
               <div class="input-group">
-                <textarea
-                  id="message"
-                  rows="5"
-                  placeholder="Message"
-                  required="required"
-                ></textarea>
+                <div class="text-item">
+                  <textarea
+                    id="message"
+                    rows="5"
+                    placeholder="Message"
+                    required="required"
+                  ></textarea>
+                </div>
               </div>
               <div>
                 <button class="send-btn" type="submit">Learn More</button>

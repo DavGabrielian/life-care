@@ -1,7 +1,12 @@
 @import "./vars";
 
-@mixin phone-media {
+@mixin mobile-media {
   @media all and (max-width: 767px) {
+    @content;
+  }
+}
+@mixin tablet-media {
+  @media (min-width: 768px) and (max-width: 1024px) {
     @content;
   }
 }
@@ -90,7 +95,11 @@ header {
       @include desktopMedia();
       padding-right: 50px;
       padding-left: 50px;
-      @include phone-media() {
+      @include mobile-media() {
+        padding-right: 5px;
+        padding-left: 5px;
+      }
+      @include tablet-media() {
         padding-right: 5px;
         padding-left: 5px;
       }
@@ -100,13 +109,19 @@ header {
         padding: 10px 15px;
         font-size: 18px;
         line-height: 20px;
-        @include phone-media() {
+        @include mobile-media() {
+          padding: 2px 20px 10px;
+        }
+        @include tablet-media() {
           padding: 2px 20px 10px;
         }
         img {
           width: 220px;
-          @include phone-media() {
+          @include mobile-media() {
             width: 170px;
+          }
+          @include tablet-media() {
+            width: 200px;
           }
         }
       }
@@ -129,7 +144,10 @@ header {
         color: $primary-white;
         border-radius: 5px;
         outline: none;
-        @include phone-media() {
+        @include mobile-media() {
+          display: block;
+        }
+        @include tablet-media() {
           display: block;
         }
       }
@@ -151,12 +169,18 @@ header {
         color: $primary-white;
         border-radius: 5px;
         outline: none;
-        @include phone-media() {
+        @include mobile-media() {
+          display: none;
+        }
+        @include tablet-media() {
           display: none;
         }
       }
       .header-info-block {
-        @include phone-media() {
+        @include mobile-media() {
+          display: none;
+        }
+        @include tablet-media() {
           display: none;
         }
         float: right;
@@ -217,7 +241,14 @@ header {
       #nav-menu {
         float: left;
         margin: 18px;
-        @include phone-media() {
+        @include mobile-media() {
+          position: relative;
+          height: 1px;
+          transition: 0.6s;
+          margin: 0;
+        }
+
+        @include tablet-media() {
           position: relative;
           height: 1px;
           transition: 0.6s;
@@ -225,17 +256,29 @@ header {
         }
 
         .menu {
-          @include phone-media() {
+          @include mobile-media() {
             opacity: 0;
             transition: 1.5s;
             display: none;
             @include flexbox(column);
           }
+          @include tablet-media() {
+            opacity: 0;
+            transition: 1.5s;
+            display: none;
+            @include flexbox(column);
+          }
+
           li a.active {
             color: $primary-white;
             background: $hover-color;
             box-shadow: 5px 5px 0 0px $primary-white;
-            @include phone-media() {
+            @include mobile-media() {
+              color: $primary-black;
+              background: transparent;
+              box-shadow: none;
+            }
+            @include tablet-media() {
               color: $primary-black;
               background: transparent;
               box-shadow: none;
@@ -244,7 +287,10 @@ header {
           li {
             margin-left: 8px;
             float: left;
-            @include phone-media() {
+            @include mobile-media() {
+              padding: 12px 10px;
+            }
+            @include tablet-media() {
               padding: 12px 10px;
             }
 
@@ -255,7 +301,14 @@ header {
               text-transform: none;
               letter-spacing: 0;
               font-weight: 500;
-              @include phone-media() {
+              @include mobile-media() {
+                font-size: 17px;
+                padding: 12px 10px;
+                text-transform: uppercase;
+                letter-spacing: 0;
+                font-weight: 900;
+              }
+              @include tablet-media() {
                 font-size: 17px;
                 padding: 12px 10px;
                 text-transform: uppercase;
@@ -269,7 +322,12 @@ header {
               color: $primary-white;
               background: $hover-color;
               box-shadow: 5px 5px 0 0px $primary-white;
-              @include phone-media() {
+              @include mobile-media() {
+                background: none;
+                color: $primary-black;
+                box-shadow: none;
+              }
+              @include tablet-media() {
                 background: none;
                 color: $primary-black;
                 box-shadow: none;
@@ -281,7 +339,10 @@ header {
       .search-bar {
         float: right;
         width: 250px;
-        @include phone-media() {
+        @include mobile-media() {
+          width: 100%;
+        }
+        @include tablet-media() {
           width: 100%;
         }
         .search-input {
@@ -304,7 +365,11 @@ header {
             border: none;
             outline: none;
             padding: 0 10px;
-            @include phone-media() {
+            @include mobile-media() {
+              font-size: 17px;
+              width: 100%;
+            }
+            @include tablet-media() {
               font-size: 17px;
               width: 100%;
             }
@@ -321,14 +386,20 @@ header {
               box-shadow: none;
               color: #666666;
               padding: 0 10px;
-              @include phone-media() {
+              @include mobile-media() {
+                float: right;
+              }
+              @include tablet-media() {
                 float: right;
               }
               .fa-search {
                 padding: 10px 0px;
                 font-size: 18px;
                 color: #333;
-                @include phone-media() {
+                @include mobile-media() {
+                  font-size: 20px;
+                }
+                @include tablet-media() {
                   font-size: 20px;
                 }
               }
@@ -347,22 +418,24 @@ header {
   width: 100%;
   background-attachment: fixed;
   background-size: cover;
-  margin-top: 130px;
-  @include phone-media() {
+  margin-top: 120px;
+  @include mobile-media() {
     margin-top: 110px;
     min-height: auto;
     padding: 6em 0 7em;
   }
+  @include tablet-media() {
+    min-height: 400px;
+  }
+
   .intro-container {
     @include desktopMedia();
     .intro-greeting {
       padding-top: 3rem;
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
+      @include flexbox(column);
       justify-content: center;
       align-items: center;
-      @include phone-media() {
+      @include mobile-media() {
         padding-top: 1rem;
       }
 
@@ -376,7 +449,7 @@ header {
         width: 100px;
         height: 100px;
         border: solid $hover-color 3px;
-        @include phone-media() {
+        @include mobile-media() {
           width: 80px;
           height: 80px;
         }
@@ -384,7 +457,7 @@ header {
         img {
           width: 50px;
           margin-top: 2px;
-          @include phone-media() {
+          @include mobile-media() {
             width: 40px;
           }
         }
@@ -393,7 +466,7 @@ header {
         margin-top: 2px;
         font-size: 45px;
         font-weight: 400;
-        @include phone-media() {
+        @include mobile-media() {
           margin-top: 15px;
           font-size: 30px;
           font-weight: 500;
@@ -410,10 +483,15 @@ header {
       display: flex;
       justify-content: center;
       width: 100%;
-      @include phone-media() {
+      @include mobile-media() {
         @include flexbox(column);
         align-items: center;
       }
+      @include tablet-media() {
+        @include flexbox(column);
+        align-items: center;
+      }
+
       .info-item {
         min-height: 200px;
         margin-top: -350px;
@@ -421,7 +499,12 @@ header {
         z-index: 1;
         padding: 50px;
         color: $primary-white;
-        @include phone-media() {
+        @include mobile-media() {
+          width: 90%;
+          margin-top: 25px;
+          padding: 25px 20px 0;
+        }
+        @include tablet-media() {
           width: 90%;
           margin-top: 25px;
           padding: 25px 20px 0;
@@ -433,7 +516,7 @@ header {
           font-size: 60px;
           line-height: normal;
           margin-bottom: 20px;
-          @include phone-media() {
+          @include mobile-media() {
             font-size: 50px;
           }
         }
@@ -445,7 +528,7 @@ header {
           font-size: 20px;
           font-weight: 600;
           margin: -5px 0 15px 0;
-          @include phone-media() {
+          @include mobile-media() {
             font-size: 17px;
           }
         }
@@ -455,7 +538,7 @@ header {
           margin: 0;
           font-size: 14px;
           font-weight: 300;
-          @include phone-media() {
+          @include mobile-media() {
             font-size: 11px;
           }
         }
@@ -470,7 +553,7 @@ header {
               border-bottom: dashed 1px $primary-white;
               padding-bottom: 2.5rem;
               padding-top: 10px;
-              @include phone-media() {
+              @include mobile-media() {
                 font-size: 11px;
               }
               .left {
@@ -485,7 +568,13 @@ header {
       }
       .second {
         margin-bottom: -63px;
-        @include phone-media() {
+        @include mobile-media() {
+          width: 90%;
+          margin-top: 25px;
+          margin-bottom: 5px;
+          padding: 25px 20px 40px;
+        }
+        @include tablet-media() {
           width: 90%;
           margin-top: 25px;
           margin-bottom: 5px;
@@ -509,14 +598,14 @@ header {
       .icon-logo {
         img {
           width: 60px;
-          @include phone-media() {
+          @include mobile-media() {
             width: 50px;
           }
         }
       }
       h2 {
         @include heading-h2;
-        @include phone-media() {
+        @include mobile-media() {
           font-size: 25px;
         }
         &::after {
@@ -531,14 +620,20 @@ header {
     }
     .about-intro {
       width: 100%;
-      @include phone-media() {
+      @include mobile-media() {
+        @include flexbox(column);
+      }
+      @include tablet-media() {
         @include flexbox(column);
       }
       .about-intro-item {
         width: 50%;
         float: left;
         padding-bottom: 1rem;
-        @include phone-media() {
+        @include mobile-media() {
+          width: 100%;
+        }
+        @include tablet-media() {
           width: 100%;
         }
 
@@ -550,7 +645,7 @@ header {
           letter-spacing: 0.5px;
           font-size: 17px;
           color: #0071d1;
-          @include phone-media() {
+          @include mobile-media() {
             font-size: 12px;
           }
         }
@@ -558,7 +653,7 @@ header {
           font-weight: bold;
           font-size: 34px;
           padding: 0 0 10px;
-          @include phone-media() {
+          @include mobile-media() {
             font-size: 30px;
           }
         }
@@ -571,14 +666,17 @@ header {
           padding-bottom: 0;
           font-weight: 400;
           margin-bottom: 15px;
-          @include phone-media() {
+          @include mobile-media() {
             font-size: 12px;
-            width: 90%;
+            width: 100%;
+          }
+          @include tablet-media() {
+            width: 100%;
           }
         }
         .more-btn {
           @extend .primary-btn;
-          @include phone-media() {
+          @include mobile-media() {
             padding: 10px 35px;
             font-size: 15px;
           }
@@ -596,7 +694,10 @@ header {
       padding-top: 7rem;
       padding-bottom: 2rem;
       width: 100%;
-      @include phone-media() {
+      @include mobile-media() {
+        @include flexbox(column);
+      }
+      @include tablet-media() {
         @include flexbox(column);
       }
       .about-gallery-item {
@@ -604,7 +705,11 @@ header {
         padding-left: 10px;
         padding-right: 10px;
 
-        @include phone-media() {
+        @include mobile-media() {
+          max-width: 100%;
+          padding-top: 2rem;
+        }
+        @include tablet-media() {
           max-width: 100%;
           padding-top: 2rem;
         }
@@ -622,7 +727,7 @@ header {
           margin: 0;
           background: $primary-color;
           text-align: center;
-          @include phone-media() {
+          @include mobile-media() {
             font-size: 14px;
           }
         }
@@ -646,26 +751,33 @@ header {
       @include flexbox(row);
       justify-content: space-between;
       width: 100%;
-      @include phone-media() {
+      @include mobile-media() {
         @include flexbox(column);
       }
+
       .serv-item-block {
         width: 100%;
         padding-bottom: 2rem;
-        @include phone-media() {
+        @include mobile-media() {
           @include flexbox(column);
         }
+
         .serv-item {
-          width: 30%;
+          width: 33%;
           text-align: center;
           color: $primary-white;
           padding-top: 3rem;
           padding-bottom: 3rem;
           float: left;
-          @include phone-media() {
+          @include mobile-media() {
             width: 100%;
             padding-top: 2rem;
             padding-bottom: 2rem;
+          }
+          @include tablet-media() {
+            width: 45%;
+            padding-top: 3rem;
+            padding-bottom: 1rem;
           }
           .icon-service {
             width: 100%;
@@ -673,7 +785,7 @@ header {
             margin-bottom: 10px;
             img {
               width: 60px;
-              @include phone-media() {
+              @include mobile-media() {
                 width: 50px;
               }
             }
@@ -683,7 +795,7 @@ header {
             font-weight: 600;
             margin: 5px 0 0;
             width: 100%;
-            @include phone-media() {
+            @include mobile-media() {
               font-size: 14px;
             }
           }
@@ -695,8 +807,11 @@ header {
             line-height: 23px;
             font-weight: 400;
             margin-top: 5px;
-            @include phone-media() {
+            @include mobile-media() {
               font-size: 13px;
+            }
+            @include tablet-media() {
+              display: none;
             }
           }
         }
@@ -708,8 +823,11 @@ header {
         min-height: 425px;
         box-shadow: 0 0 50px -22px rgba(0, 0, 0, 0.3);
         padding: 20px;
-        @include phone-media() {
+        @include mobile-media() {
           width: 92%;
+        }
+        @include tablet-media() {
+          width: 70%;
         }
         h3 {
           margin: 0;
@@ -722,7 +840,7 @@ header {
           padding: 10px 15px;
           font-size: 18px;
           font-weight: 600;
-          @include phone-media() {
+          @include mobile-media() {
             font-size: 16px;
           }
         }
@@ -746,7 +864,7 @@ header {
               .submit-btn {
                 margin-top: 1rem;
                 @extend .primary-btn;
-                @include phone-media() {
+                @include mobile-media() {
                   padding: 10px 35px;
                   font-size: 15px;
                 }
@@ -780,14 +898,14 @@ header {
       .icon-logo {
         img {
           width: 60px;
-          @include phone-media() {
+          @include mobile-media() {
             width: 50px;
           }
         }
       }
       h2 {
         @include heading-h2;
-        @include phone-media() {
+        @include mobile-media() {
           font-size: 25px;
         }
         &::after {
@@ -806,20 +924,26 @@ header {
       padding-top: 1rem;
       padding-bottom: 2rem;
       width: 100%;
-      @include phone-media() {
+      @include mobile-media() {
+        @include flexbox(column);
+      }
+      @include tablet-media() {
         @include flexbox(column);
       }
       .doctors-item {
-        @include phone-media() {
-          max-width: 100%;
-        }
         text-align: center;
         max-width: 45%;
         padding: 20px;
+        @include mobile-media() {
+          max-width: 100%;
+        }
+        @include tablet-media() {
+          max-width: 100%;
+        }
         img {
           border-radius: 6px;
           max-width: 100%;
-          @include phone-media() {
+          @include mobile-media() {
             max-width: 95%;
           }
         }
@@ -839,12 +963,19 @@ header {
           margin: 0 70px;
           position: relative;
           top: -35px;
+
+          @include tablet-media() {
+            margin: 0 220px;
+          }
         }
 
         span {
           font-size: 14px;
           color: $primary-color;
-          @include phone-media() {
+          @include mobile-media() {
+            font-size: 18px;
+          }
+          @include tablet-media() {
             font-size: 18px;
           }
         }
@@ -852,9 +983,13 @@ header {
           font-size: 12px;
           font-weight: 300;
           color: $primary-grey;
-          @include phone-media() {
+          @include mobile-media() {
             font-size: 18px;
             padding: 0 10px;
+          }
+          @include tablet-media() {
+            font-size: 18px;
+            padding: 0 100px;
           }
         }
         .footer-social {
@@ -887,7 +1022,10 @@ header {
       @include flexbox(row);
       padding-top: 1rem;
       padding-bottom: 2rem;
-      @include phone-media() {
+      @include mobile-media() {
+        @include flexbox(column);
+      }
+      @include tablet-media() {
         @include flexbox(column);
       }
       .card-body {
@@ -896,7 +1034,10 @@ header {
         margin: 60px 20px 0;
         background: $primary-white;
         box-shadow: 0px 10px 25px -20px $primary-black;
-        @include phone-media() {
+        @include mobile-media() {
+          margin: 10px !important;
+        }
+        @include tablet-media() {
           margin: 10px !important;
         }
 
@@ -904,7 +1045,7 @@ header {
           padding: 20px 0 10px 0;
           font-size: 31px;
           font-weight: 300;
-          @include phone-media() {
+          @include mobile-media() {
             font-size: 25px;
           }
         }
@@ -923,6 +1064,9 @@ header {
           line-height: 30px;
           color: #c2c2c2;
           font-size: 16px;
+          @include tablet-media() {
+            font-size: 20px;
+          }
         }
         .title {
           margin: 5px;
@@ -945,6 +1089,9 @@ header {
           line-height: 30px;
           font-size: 16px;
           color: #c2c2c2;
+          @include tablet-media() {
+            font-size: 19px;
+          }
           li {
             strong {
               color: $primary-black;
@@ -964,9 +1111,15 @@ header {
             color: #1f1f1f;
             background-color: transparent;
             outline: none;
+            @include tablet-media() {
+              font-size: 18px;
+            }
           }
           .price-center-btn {
             @extend .primary-btn;
+            @include tablet-media() {
+              font-size: 20px;
+            }
           }
         }
       }
@@ -990,14 +1143,14 @@ header {
       .icon-logo {
         img {
           width: 60px;
-          @include phone-media() {
+          @include mobile-media() {
             width: 50px;
           }
         }
       }
       h2 {
         @include heading-h2;
-        @include phone-media() {
+        @include mobile-media() {
           font-size: 25px;
         }
 
@@ -1020,29 +1173,43 @@ header {
         justify-content: center;
         align-items: center;
 
-        @include phone-media() {
+        @include mobile-media() {
+          @include flexbox(column);
           align-items: center;
           justify-content: center;
-
-          @include flexbox(column);
         }
+        @include tablet-media() {
+          @include flexbox(column);
+          align-items: center;
+          justify-content: center;
+        }
+
         max-width: 100%;
         .testimonial-item {
           max-width: 45%;
           padding-right: 15px;
           padding-left: 15px;
 
-          @include phone-media() {
+          @include mobile-media() {
             padding-right: 0;
             padding-left: 0;
             max-width: 90%;
           }
+          @include tablet-media() {
+            padding-right: 0;
+            padding-left: 0;
+            max-width: 90%;
+          }
+
           .desc {
             position: relative;
             background: $primary-white;
             border: 1px solid #ededed;
             padding: 30px;
-            @include phone-media() {
+            @include mobile-media() {
+              padding: 20px;
+            }
+            @include tablet-media() {
               padding: 20px;
             }
 
@@ -1050,6 +1217,10 @@ header {
               font-size: 18px;
               font-weight: bolder;
               padding: 0 0 10px;
+              @include tablet-media() {
+                font-size: 19px;
+                padding: 0 0 20px;
+              }
 
               .fa-quote-left {
                 color: rgba(0, 0, 0, 0.1);
@@ -1065,6 +1236,9 @@ header {
               line-height: 30px;
               position: relative;
               font-weight: 400;
+              @include tablet-media() {
+                font-size: 17px;
+              }
             }
           }
           .testi-meta {
@@ -1079,6 +1253,9 @@ header {
               padding: 13px 0 0;
               font-weight: 400;
               color: $hover-color;
+              @include tablet-media() {
+                font-size: 20px;
+              }
               span {
                 background-color: transparent;
                 color: #aaa;
@@ -1108,14 +1285,14 @@ header {
     .icon-logo {
       img {
         width: 60px;
-        @include phone-media() {
+        @include mobile-media() {
           width: 50px;
         }
       }
     }
     h2 {
       @include heading-h2;
-      @include phone-media() {
+      @include mobile-media() {
         font-size: 25px;
       }
       &::after {
@@ -1141,7 +1318,7 @@ header {
       background: rgba(0, 0, 0, 0.8);
       z-index: 1;
       padding: 50px;
-      @include phone-media() {
+      @include mobile-media() {
         position: absolute;
         width: 90%;
         min-height: 100px;
@@ -1150,21 +1327,27 @@ header {
 
       form {
         @include flexbox(column);
-        justify-content: center;
 
         .input-group {
           max-width: 100%;
-          @include phone-media() {
+          justify-content: space-evenly;
+
+          @include mobile-media() {
+            @include flexbox(column);
+          }
+          @include tablet-media() {
             @include flexbox(column);
           }
           .input-item {
-            max-width: 50%;
-            float: left;
-            padding-left: 10px;
-            padding-right: 10px;
+            max-width: 45%;
             padding-top: 15px;
             padding-bottom: 15px;
-            @include phone-media() {
+            @include mobile-media() {
+              max-width: 100%;
+              padding-right: 15px;
+              padding-left: 15px;
+            }
+            @include tablet-media() {
               max-width: 100%;
             }
             input {
@@ -1180,13 +1363,25 @@ header {
             }
           }
 
-          textarea {
-            max-width: 100%;
-            background: transparent;
-            border: none;
-            border-bottom: solid $primary-white 2px;
-            font-size: 15px;
-            font-weight: 300;
+          .text-item {
+            width: 94%;
+
+            @include mobile-media() {
+              max-width: 100%;
+              padding-right: 15px;
+              padding-left: 15px;
+            }
+            @include tablet-media() {
+              max-width: 100%;
+            }
+            textarea {
+              width: 100%;
+              background: transparent;
+              border: none;
+              border-bottom: solid $primary-white 2px;
+              font-size: 15px;
+              font-weight: 300;
+            }
           }
         }
 
@@ -1205,7 +1400,7 @@ header {
       width: 70%;
       height: 100;
 
-      @include phone-media() {
+      @include mobile-media() {
         width: 90% !important;
         height: 32rem !important;
       }
@@ -1223,14 +1418,14 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    @include phone-media() {
+    @include mobile-media() {
       @include flexbox(column);
     }
 
     .life-care-block {
       max-width: 30%;
       @include footBlock();
-      @include phone-media() {
+      @include mobile-media() {
         max-width: 100%;
       }
       img {
@@ -1243,7 +1438,7 @@ header {
         line-height: 24px;
         margin-bottom: 0;
         color: $primary-grey;
-        @include phone-media() {
+        @include mobile-media() {
           padding-top: 2rem;
           font-size: 16px;
         }
@@ -1252,7 +1447,7 @@ header {
 
     .links-block {
       max-width: 30%;
-      @include phone-media() {
+      @include mobile-media() {
         max-width: 100%;
       }
       h4 {
@@ -1262,7 +1457,7 @@ header {
         border-left: solid $primary-color 5px;
         padding: 0 0 0 15px;
         margin-bottom: 20px;
-        @include phone-media() {
+        @include mobile-media() {
           font-size: 22px;
         }
       }
@@ -1276,7 +1471,7 @@ header {
           color: $primary-grey;
           font-size: 16px;
           font-weight: 400;
-          @include phone-media() {
+          @include mobile-media() {
             font-size: 17px;
           }
           span {
@@ -1285,7 +1480,7 @@ header {
             width: 30px;
             text-align: center;
             color: $primary-color;
-            @include phone-media() {
+            @include mobile-media() {
               font-size: 22px;
             }
           }
@@ -1295,7 +1490,7 @@ header {
 
     .footer-form {
       max-width: 30%;
-      @include phone-media() {
+      @include mobile-media() {
         max-width: 100%;
       }
       h4 {
@@ -1305,7 +1500,7 @@ header {
         border-left: solid $primary-color 5px;
         padding: 0 0 0 15px;
         margin-bottom: 20px;
-        @include phone-media() {
+        @include mobile-media() {
           font-size: 22px;
         }
       }
@@ -1316,7 +1511,7 @@ header {
         line-height: 24px;
         margin-bottom: 0;
         color: $primary-grey;
-        @include phone-media() {
+        @include mobile-media() {
           font-size: 16px;
           padding-top: 5px;
         }
@@ -1363,7 +1558,7 @@ footer {
   color: $primary-white;
   text-align: center;
   padding: 1rem;
-  @include phone-media() {
+  @include mobile-media() {
     font-size: 18px;
   }
 }
