@@ -62,7 +62,7 @@ li {
 
 // extend
 .primary-btn {
-  color: #fff;
+  color: $primary-white;
   padding: 13px 40px;
   font-size: 18px;
   cursor: pointer;
@@ -75,16 +75,12 @@ li {
   }
 }
 
-// .price-icon {
-
-// }
-
 header {
   position: fixed;
   top: 0;
   z-index: 5;
   width: 100%;
-  background-color: #fff;
+  background-color: $primary-white;
 
   .header-top {
     width: 100%;
@@ -104,10 +100,13 @@ header {
         padding: 10px 15px;
         font-size: 18px;
         line-height: 20px;
+        @include phone-media() {
+          padding: 2px 20px 10px;
+        }
         img {
           width: 220px;
           @include phone-media() {
-            width: 140px;
+            width: 170px;
           }
         }
       }
@@ -118,12 +117,16 @@ header {
         float: right;
         padding: 2px 10px 0;
         margin-right: 10px;
-        background: linear-gradient(to right, #1d86df 0%, #39b49a 100%);
+        background: linear-gradient(
+          to right,
+          $primary-color 0%,
+          $hover-color 100%
+        );
         border: none;
         border-radius: 0;
         font-size: 22px;
         line-height: normal;
-        color: #fff;
+        color: $primary-white;
         border-radius: 5px;
         outline: none;
         @include phone-media() {
@@ -136,12 +139,16 @@ header {
         float: right;
         padding: 2px 10px 0;
         margin-right: 10px;
-        background: linear-gradient(to right, #1d86df 0%, #39b49a 100%);
+        background: linear-gradient(
+          to right,
+          $primary-color 0%,
+          $hover-color 100%
+        );
         border: none;
         border-radius: 0;
         font-size: 22px;
         line-height: normal;
-        color: #fff;
+        color: $primary-white;
         border-radius: 5px;
         outline: none;
         @include phone-media() {
@@ -166,7 +173,7 @@ header {
             line-height: normal;
             padding: 10px 12px;
             margin-right: 15px;
-            color: #fff;
+            color: $primary-white;
             transition: ease all 1s;
             cursor: pointer;
             &:hover {
@@ -225,11 +232,11 @@ header {
             @include flexbox(column);
           }
           li a.active {
-            color: #fff;
+            color: $primary-white;
             background: $hover-color;
-            box-shadow: 5px 5px 0 0px #fff;
+            box-shadow: 5px 5px 0 0px $primary-white;
             @include phone-media() {
-              color: #222;
+              color: $primary-black;
               background: transparent;
               box-shadow: none;
             }
@@ -259,12 +266,12 @@ header {
 
             &:hover a {
               transition: 0.6s;
-              color: #fff;
+              color: $primary-white;
               background: $hover-color;
-              box-shadow: 5px 5px 0 0px #fff;
+              box-shadow: 5px 5px 0 0px $primary-white;
               @include phone-media() {
                 background: none;
-                color: #000;
+                color: $primary-black;
                 box-shadow: none;
               }
             }
@@ -281,7 +288,7 @@ header {
           @include flexbox(row);
           border: none;
           border-radius: 50px;
-          background-color: #fff;
+          background-color: $primary-white;
           overflow: hidden;
           margin: 10px 0;
 
@@ -291,7 +298,7 @@ header {
             float: left;
             font-size: 14px;
             font-weight: 500;
-            color: #222;
+            color: $primary-black;
             width: 200px;
             height: 40px;
             border: none;
@@ -364,7 +371,7 @@ header {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        background: #fff;
+        background: $primary-white;
         border-radius: 100%;
         width: 100px;
         height: 100px;
@@ -388,7 +395,7 @@ header {
         font-weight: 400;
         @include phone-media() {
           margin-top: 15px;
-          font-size: 22px;
+          font-size: 30px;
           font-weight: 500;
         }
       }
@@ -413,7 +420,7 @@ header {
         width: 20%;
         z-index: 1;
         padding: 50px;
-        color: #fff;
+        color: $primary-white;
         @include phone-media() {
           width: 90%;
           margin-top: 25px;
@@ -433,7 +440,7 @@ header {
         h3 {
           width: 100%;
           text-align: center;
-          color: #fff;
+          color: $primary-white;
           padding: 0;
           font-size: 20px;
           font-weight: 600;
@@ -460,7 +467,7 @@ header {
             li {
               width: 100%;
               font-size: 14px;
-              border-bottom: dashed 1px #fff;
+              border-bottom: dashed 1px $primary-white;
               padding-bottom: 2.5rem;
               padding-top: 10px;
               @include phone-media() {
@@ -483,38 +490,6 @@ header {
           margin-top: 25px;
           margin-bottom: 5px;
           padding: 25px 20px 40px;
-        }
-        &::before {
-          content: "";
-          display: block;
-          width: 0;
-          height: 0;
-          background: transparent;
-          position: absolute;
-          z-index: 0;
-          border-bottom: solid transparent 65px;
-          border-right: solid #a0cff7 70px;
-          bottom: -208px;
-          left: 425px;
-          @include phone-media() {
-            display: none;
-          }
-        }
-        &::after {
-          content: "";
-          display: block;
-          width: 0;
-          height: 0;
-          background: transparent;
-          position: absolute;
-          z-index: 0;
-          border-bottom: solid transparent 65px;
-          border-left: solid #a0cff7 70px;
-          bottom: -208px;
-          right: 424px;
-          @include phone-media() {
-            display: none;
-          }
         }
       }
     }
@@ -592,7 +567,7 @@ header {
           padding-top: 10px;
           font-size: 16px;
           font-style: normal;
-          color: #999;
+          color: $primary-grey;
           padding-bottom: 0;
           font-weight: 400;
           margin-bottom: 15px;
@@ -626,6 +601,9 @@ header {
       }
       .about-gallery-item {
         max-width: 25%;
+        padding-left: 10px;
+        padding-right: 10px;
+
         @include phone-media() {
           max-width: 100%;
           padding-top: 2rem;
@@ -639,10 +617,10 @@ header {
         }
         h3 {
           font-size: 16px;
-          color: #ffffff;
+          color: $primary-white;
           padding: 12px 0 12px;
           margin: 0;
-          background: #157fda;
+          background: $primary-color;
           text-align: center;
           @include phone-media() {
             font-size: 14px;
@@ -654,13 +632,14 @@ header {
 }
 
 #service {
+  padding: 50px 0;
   width: 100%;
   background: url("../images/service-bg.png");
-  padding: 5rem 0;
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
   float: left;
+
   .service-container {
     @include desktopMedia();
     .serv-blocks {
@@ -679,11 +658,14 @@ header {
         .serv-item {
           width: 30%;
           text-align: center;
-          color: #fff;
-          padding-bottom: 2rem;
+          color: $primary-white;
+          padding-top: 3rem;
+          padding-bottom: 3rem;
           float: left;
           @include phone-media() {
             width: 100%;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
           }
           .icon-service {
             width: 100%;
@@ -722,7 +704,7 @@ header {
 
       .appointment-form {
         width: 40%;
-        background: #fff;
+        background: $primary-white;
         min-height: 425px;
         box-shadow: 0 0 50px -22px rgba(0, 0, 0, 0.3);
         padding: 20px;
@@ -736,7 +718,7 @@ header {
             $hover-color 0%,
             $primary-color 100%
           );
-          color: #fff;
+          color: $primary-white;
           padding: 10px 15px;
           font-size: 18px;
           font-weight: 600;
@@ -773,7 +755,7 @@ header {
             select {
               @include input();
               width: 100%;
-              background-color: #fff;
+              background-color: $primary-white;
             }
 
             textarea {
@@ -788,22 +770,26 @@ header {
 }
 
 #doctors {
-  padding-top: 48rem;
   .doctors-container {
-    @include desktopMedia();
     .doctors-heading {
+      padding-top: 60px;
       text-align: center;
       float: left;
       width: 100%;
-      margin: 0 0 50px 0;
+      margin: 0 0 40px 0;
       .icon-logo {
         img {
           width: 60px;
+          @include phone-media() {
+            width: 50px;
+          }
         }
       }
       h2 {
         @include heading-h2;
-
+        @include phone-media() {
+          font-size: 25px;
+        }
         &::after {
           width: 50px;
           height: 4px;
@@ -824,12 +810,18 @@ header {
         @include flexbox(column);
       }
       .doctors-item {
+        @include phone-media() {
+          max-width: 100%;
+        }
         text-align: center;
-        max-width: 30%;
+        max-width: 45%;
         padding: 20px;
         img {
           border-radius: 6px;
           max-width: 100%;
+          @include phone-media() {
+            max-width: 95%;
+          }
         }
         h3 {
           background: linear-gradient(
@@ -837,10 +829,11 @@ header {
             $primary-color 0%,
             $hover-color 100%
           );
-          color: #ffffff;
+          color: $primary-white;
           display: flex;
           justify-content: center;
           font-size: 20px;
+          font-weight: 400;
           line-height: 1;
           padding: 15px 20px;
           margin: 0 70px;
@@ -851,18 +844,29 @@ header {
         span {
           font-size: 14px;
           color: $primary-color;
+          @include phone-media() {
+            font-size: 18px;
+          }
         }
         p {
-          font-size: 16px;
+          font-size: 12px;
           font-weight: 300;
-          color: #999;
+          color: $primary-grey;
+          @include phone-media() {
+            font-size: 18px;
+            padding: 0 10px;
+          }
         }
         .footer-social {
           margin-top: 20px;
           a {
-            color: #ffffff;
+            color: $primary-white;
             padding: 6px 12px;
-            background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);
+            background: linear-gradient(
+              to right,
+              $hover-color 0%,
+              $primary-color 100%
+            );
           }
         }
       }
@@ -888,15 +892,21 @@ header {
       }
       .card-body {
         text-align: center;
-        width: 33%;
-        margin: 60px 10px 0;
-        background: #fff;
-        box-shadow: 0px 10px 25px -20px #000;
+        max-width: 100%;
+        margin: 60px 20px 0;
+        background: $primary-white;
+        box-shadow: 0px 10px 25px -20px $primary-black;
+        @include phone-media() {
+          margin: 10px !important;
+        }
 
         h2 {
-          padding: 20px 0 15px 0;
+          padding: 20px 0 10px 0;
           font-size: 31px;
           font-weight: 300;
+          @include phone-media() {
+            font-size: 25px;
+          }
         }
         h3 {
           font-size: 15px;
@@ -917,10 +927,14 @@ header {
         .title {
           margin: 5px;
           padding: 0px 0 15px 0;
-          color: #fff;
-          background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);
+          color: $primary-white;
+          background: linear-gradient(
+            to right,
+            $hover-color 0%,
+            $primary-color 100%
+          );
           h3 {
-            color: #fff;
+            color: $primary-white;
           }
         }
         ul {
@@ -933,7 +947,7 @@ header {
           color: #c2c2c2;
           li {
             strong {
-              color: #222;
+              color: $primary-black;
               font-weight: 400;
               margin-right: 6px;
               margin-left: 16px;
@@ -949,6 +963,7 @@ header {
             border: 1px solid #ececec;
             color: #1f1f1f;
             background-color: transparent;
+            outline: none;
           }
           .price-center-btn {
             @extend .primary-btn;
@@ -960,13 +975,14 @@ header {
 }
 
 #testimonials {
-  padding: 100px 0;
+  padding: 50px 0;
   background-image: url("../images/bg-testimonial.png");
   background-position: bottom;
   background-attachment: fixed;
 
   .testimonials-container {
     @include desktopMedia();
+
     .testim-heading {
       text-align: center;
       width: 100%;
@@ -974,10 +990,16 @@ header {
       .icon-logo {
         img {
           width: 60px;
+          @include phone-media() {
+            width: 50px;
+          }
         }
       }
       h2 {
         @include heading-h2;
+        @include phone-media() {
+          font-size: 25px;
+        }
 
         &::after {
           width: 50px;
@@ -995,16 +1017,34 @@ header {
       padding-bottom: 15px;
       .testimonials-block-item {
         @include flexbox(row);
+        justify-content: center;
+        align-items: center;
+
+        @include phone-media() {
+          align-items: center;
+          justify-content: center;
+
+          @include flexbox(column);
+        }
         max-width: 100%;
         .testimonial-item {
+          max-width: 45%;
           padding-right: 15px;
           padding-left: 15px;
-          width: 50%;
+
+          @include phone-media() {
+            padding-right: 0;
+            padding-left: 0;
+            max-width: 90%;
+          }
           .desc {
             position: relative;
-            background: #fff;
+            background: $primary-white;
             border: 1px solid #ededed;
             padding: 30px;
+            @include phone-media() {
+              padding: 20px;
+            }
 
             h3 {
               font-size: 18px;
@@ -1023,8 +1063,6 @@ header {
               font-size: 15px;
               font-style: normal;
               line-height: 30px;
-              margin: 0;
-              padding: 0;
               position: relative;
               font-weight: 400;
             }
@@ -1040,7 +1078,7 @@ header {
               font-size: 18px;
               padding: 13px 0 0;
               font-weight: 400;
-              color: #39b49a;
+              color: $hover-color;
               span {
                 background-color: transparent;
                 color: #aaa;
@@ -1062,11 +1100,7 @@ header {
 }
 
 #getintouch {
-  padding: 50px 0;
-  background-image: url("../images/bg-testimonial.png");
-  background-position: bottom;
-  background-attachment: fixed;
-
+  padding: 100px 0px;
   .getintouch-heading {
     text-align: center;
     width: 100%;
@@ -1074,14 +1108,19 @@ header {
     .icon-logo {
       img {
         width: 60px;
+        @include phone-media() {
+          width: 50px;
+        }
       }
     }
     h2 {
       @include heading-h2;
-
+      @include phone-media() {
+        font-size: 25px;
+      }
       &::after {
         width: 50px;
-        height: 40px;
+        height: 4px;
         background: $hover-color;
         content: "";
         display: block;
@@ -1092,47 +1131,60 @@ header {
 
   .contact-section {
     @include flexbox(row);
-    width: 100%;
+    justify-content: center;
+    max-width: 100%;
+
     .form-content {
       position: relative;
       width: 30%;
-      height: 30%;
+      min-height: 30%;
       background: rgba(0, 0, 0, 0.8);
       z-index: 1;
       padding: 50px;
+      @include phone-media() {
+        position: absolute;
+        width: 90%;
+        min-height: 100px;
+        padding: 15px 10px;
+      }
+
       form {
         @include flexbox(column);
         justify-content: center;
+
         .input-group {
-          width: 100%;
+          max-width: 100%;
+          @include phone-media() {
+            @include flexbox(column);
+          }
           .input-item {
-            width: 50%;
+            max-width: 50%;
             float: left;
             padding-left: 10px;
             padding-right: 10px;
             padding-top: 15px;
             padding-bottom: 15px;
+            @include phone-media() {
+              max-width: 100%;
+            }
             input {
               width: 100%;
               background: transparent;
               padding: 0;
               border: none;
-              border-bottom: solid #fff 2px;
+              border-bottom: solid $primary-white 2px;
               font-size: 15px;
               font-weight: 300;
               margin-bottom: 15px;
               outline: none;
             }
           }
-        }
-        .input-group {
-          width: 100%;
 
           textarea {
-            width: 95%;
+            max-width: 100%;
             background: transparent;
             border: none;
-            border-bottom: solid #fff 2px;
+            border-bottom: solid $primary-white 2px;
             font-size: 15px;
             font-weight: 300;
           }
@@ -1152,6 +1204,11 @@ header {
     .map {
       width: 70%;
       height: 100;
+
+      @include phone-media() {
+        width: 90% !important;
+        height: 32rem !important;
+      }
     }
   }
 }
@@ -1166,11 +1223,18 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    @include phone-media() {
+      @include flexbox(column);
+    }
 
     .life-care-block {
       max-width: 30%;
       @include footBlock();
+      @include phone-media() {
+        max-width: 100%;
+      }
       img {
+        width: 230px;
         height: 40px;
       }
 
@@ -1178,19 +1242,29 @@ header {
         font-size: 14px;
         line-height: 24px;
         margin-bottom: 0;
-        color: #999;
+        color: $primary-grey;
+        @include phone-media() {
+          padding-top: 2rem;
+          font-size: 16px;
+        }
       }
     }
 
     .links-block {
       max-width: 30%;
+      @include phone-media() {
+        max-width: 100%;
+      }
       h4 {
-        color: #222;
+        color: $primary-black;
         font-size: 17px;
         font-weight: 900;
-        border-left: solid #157fda 5px;
+        border-left: solid $primary-color 5px;
         padding: 0 0 0 15px;
         margin-bottom: 20px;
+        @include phone-media() {
+          font-size: 22px;
+        }
       }
 
       ul {
@@ -1199,15 +1273,21 @@ header {
         width: 100%;
         li {
           margin-bottom: 15px;
-          color: #999;
+          color: $primary-grey;
           font-size: 16px;
           font-weight: 400;
+          @include phone-media() {
+            font-size: 17px;
+          }
           span {
             padding-right: 10px;
             font-size: 20px;
             width: 30px;
             text-align: center;
-            color: #157fda;
+            color: $primary-color;
+            @include phone-media() {
+              font-size: 22px;
+            }
           }
         }
       }
@@ -1215,13 +1295,19 @@ header {
 
     .footer-form {
       max-width: 30%;
+      @include phone-media() {
+        max-width: 100%;
+      }
       h4 {
-        color: #222;
+        color: $primary-black;
         font-size: 17px;
         font-weight: 900;
-        border-left: solid #157fda 5px;
+        border-left: solid $primary-color 5px;
         padding: 0 0 0 15px;
         margin-bottom: 20px;
+        @include phone-media() {
+          font-size: 22px;
+        }
       }
 
       p {
@@ -1229,8 +1315,13 @@ header {
         font-size: 14px;
         line-height: 24px;
         margin-bottom: 0;
-        color: #999;
+        color: $primary-grey;
+        @include phone-media() {
+          font-size: 16px;
+          padding-top: 5px;
+        }
       }
+
       form {
         @include flexbox(row);
         padding-top: 10px;
@@ -1250,8 +1341,12 @@ header {
           height: 50px;
           width: 20%;
           font-weight: bold;
-          color: #fff;
-          background: linear-gradient(to right, #1d86df 0%, #39b49a 100%);
+          color: $primary-white;
+          background: linear-gradient(
+            to right,
+            $primary-color 0%,
+            $hover-color 100%
+          );
           border: none;
           font-size: 24px;
           position: relative;
@@ -1265,7 +1360,10 @@ header {
 
 footer {
   background: $primary-color;
-  color: #fff;
+  color: $primary-white;
   text-align: center;
   padding: 1rem;
+  @include phone-media() {
+    font-size: 18px;
+  }
 }
