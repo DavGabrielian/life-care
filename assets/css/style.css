@@ -48,8 +48,6 @@ header .header-top .header-container {
   padding-left: 20px;
   margin-right: auto;
   margin-left: auto;
-  padding-right: 50px;
-  padding-left: 50px;
 }
 
 @media all and (max-width: 767px) {
