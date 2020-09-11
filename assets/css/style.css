@@ -86,6 +86,12 @@ header .header-top .header-container .logo {
   }
 }
 
+@media (min-width: 1024px) and (max-width: 1150px) {
+  header .header-top .header-container .logo {
+    padding: 2px 2px 10px;
+  }
+}
+
 header .header-top .header-container .logo img {
   width: 220px;
 }
@@ -180,6 +186,12 @@ header .header-top .header-container .header-info-block {
 header .header-top .header-container .header-info-block .header-info-item {
   float: left;
   margin-left: 30px;
+}
+
+@media (min-width: 1024px) and (max-width: 1150px) {
+  header .header-top .header-container .header-info-block .header-info-item {
+    margin-left: 10px;
+  }
 }
 
 header .header-top .header-container .header-info-block .header-info-item .header-icon {
@@ -343,6 +355,12 @@ header .header-bottom .header-container #nav-menu .menu li {
 @media (min-width: 768px) and (max-width: 1024px) {
   header .header-bottom .header-container #nav-menu .menu li {
     padding: 12px 10px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1150px) {
+  header .header-bottom .header-container #nav-menu .menu li {
+    margin-left: -10px;
   }
 }
 
@@ -981,8 +999,7 @@ header .header-bottom .header-container .search-bar .search-input .input-search-
 }
 
 #about .about-container .about-intro .about-intro-item img {
-  display: block;
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -1052,24 +1069,45 @@ header .header-bottom .header-container .search-bar .search-input .input-search-
   }
 }
 
+#about .about-container .about-gallery .about-gallery-item div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: wrap;
+      -ms-flex: wrap;
+          flex: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 #about .about-container .about-gallery .about-gallery-item div img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-#about .about-container .about-gallery .about-gallery-item h3 {
+#about .about-container .about-gallery .about-gallery-item div h3 {
   font-size: 16px;
   color: #fff;
   padding: 12px 0 12px;
-  margin: 0;
   background: #157fda;
   text-align: center;
 }
 
 @media all and (max-width: 767px) {
-  #about .about-container .about-gallery .about-gallery-item h3 {
+  #about .about-container .about-gallery .about-gallery-item div h3 {
     font-size: 14px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #about .about-container .about-gallery .about-gallery-item div h3 {
+    width: 100%;
   }
 }
 
@@ -1502,6 +1540,8 @@ header .header-bottom .header-container .search-bar .search-input .input-search-
 }
 
 #doctors .doctors-container .doctors-block .doctors-item p {
+  padding-left: 20px;
+  padding-right: 20px;
   font-size: 12px;
   font-weight: 300;
   color: #999;
@@ -2334,6 +2374,7 @@ header .header-bottom .header-container .search-bar .search-input .input-search-
   line-height: 24px;
   margin-bottom: 0;
   color: #999;
+  width: 100%;
 }
 
 @media all and (max-width: 767px) {
@@ -2354,13 +2395,14 @@ header .header-bottom .header-container .search-bar .search-input .input-search-
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  width: 100%;
   padding-top: 10px;
 }
 
 #links div .footer-form form input {
   display: inline-block;
   height: 50px;
-  width: 80%;
+  width: 100%;
   padding: 0px 20px;
   background: #eee;
   border-radius: 0;
@@ -2372,7 +2414,7 @@ header .header-bottom .header-container .search-bar .search-input .input-search-
 
 #links div .footer-form form button {
   height: 50px;
-  width: 20%;
+  width: 40%;
   font-weight: bold;
   color: #fff;
   background: -webkit-gradient(linear, left top, right top, from(#157fda), to(#39b49b));
@@ -2382,6 +2424,12 @@ header .header-bottom .header-container .search-bar .search-input .input-search-
   position: relative;
   display: inline-block;
   text-align: center;
+}
+
+@media all and (max-width: 767px) {
+  #links div .footer-form form button {
+    width: 20%;
+  }
 }
 
 footer {
